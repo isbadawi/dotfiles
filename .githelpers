@@ -1,0 +1,23 @@
+#!/bin/bash
+
+HASH="%C(bold yellow)%h%C(reset)"
+RELATIVE_TIME="%C(bold green)(%ar)%C(reset)"
+AUTHOR="%C(bold blue)<%an>%C(reset)"
+REFS="%C(bold red)%d%C(reset)"
+SUBJECT="%s"
+
+FORMAT="$HASH?$RELATIVE_TIME?$AUTHOR?$REFS $SUBJECT"
+
+RED='\033[31m'
+RESET='\033[0m'
+
+function pretty_git_log {
+  git log --graph --pretty="tformat:$FORMAT" $* |
+  sed -Ee 's/(^[^<]*) ago\)/\1)/' |
+  sed -Ee 's/(^[^<]*), [[:digit:]]+ .*months?\)/\1)/' |
+  column -t -s '?' |
+  sed -Ee "s/(Merge branch .*$)/$(printf $RED)\1$(printf $RESET)/" |
+  sed -Ee "s/(Merge remote-tracking branch .*$)/$(printf $RED)\1$(printf $RESET)/" |
+  sed -Ee "s/(Merge pull request .*$)/$(printf $RED)\1$(printf $RESET)/" |
+  less
+}

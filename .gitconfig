@@ -1,0 +1,30 @@
+[user]
+  name = Ismail Badawi
+  email = ismail@badawi.io
+[core]
+  editor = mvim -v
+  excludesfile = ~/.gitignore
+[color]
+  ui = true
+[branch]
+  autosetuprebase = always
+[push]
+  default = simple
+[status]
+  branch = true
+[merge]
+  tool = vimdiff
+  conflictstyle = diff3
+[mergetool]
+  prompt = false
+  keepBackup = false
+[alias]
+  aliases = config --get-regexp alias
+  staged = diff --staged
+  unstage = reset HEAD
+  startover = reset --hard HEAD
+  branches = branch --verbose
+  remotes = remote --verbose
+
+  l = "!source ~/.githelpers && pretty_git_log"
+  ci = commit --verbose
