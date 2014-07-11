@@ -41,6 +41,7 @@ alias g++='g++-4.8'
 alias ag='ag --smart-case'
 
 alias t='python ~/code/py/t/t.py --task-dir ~/.tasks --list tasks'
+alias rainbow='yes $(jot -b# $(tput cols) | xargs | tr -d '\'' '\'') | lolcat'
 
 function cd {
     builtin cd "$@" && ls
