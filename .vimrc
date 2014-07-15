@@ -158,6 +158,10 @@ nnoremap <leader>gl :Extradite<cr>
 nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gc :call GstatusOrGcommit()<cr>
 
+" vim-unimpaired style mappings for the jump list
+nnoremap [j <C-O>
+nnoremap ]j <C-I>
+
 " Call :Gstatus unless it's already open, in which case call :Gcommit
 function! GstatusOrGcommit()
   if bufname('%') !~ '.git/index$'
