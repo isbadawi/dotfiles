@@ -149,12 +149,9 @@ nnoremap <c-l> <c-w>l
 " Toggle between relative and absolute line numbers
 nnoremap <leader>n :set number! relativenumber!<cr>
 
-" Various plugin options
-let g:extradite_diff_split = 'belowright vertical split'
-
 nnoremap <leader>w :FixWhitespace<cr>
 nnoremap <leader>gb :Gblame<cr>
-nnoremap <leader>gl :Extradite<cr>
+nnoremap <leader>gl :Glog<cr>
 nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gc :call GstatusOrGcommit()<cr>
 
