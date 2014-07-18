@@ -76,6 +76,7 @@ augroup filetypes
   autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
   " Use // comments for C/C++ files (for commentary plugin)
   autocmd FileType c,cc,cpp setlocal commentstring=//\ %s
+  autocmd FileType matlab setlocal commentstring=%\ %s
 augroup END
 
 augroup remember_position
