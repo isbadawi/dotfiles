@@ -4,8 +4,6 @@ shopt -s histappend
 export HISTCONTROL=ignoredups:ignorespace
 export HISTSIZE=10000
 
-set -o vi
-
 # Move /usr/local/bin before /usr/bin first for homebrew.
 # (Can't just do export PATH=/usr/local/bin:$PATH; breaks vex).
 export PATH=$(python -c "import sys; p = sys.argv[1].split(':'); p.remove('/usr/local/bin'); p.insert(p.index('/usr/bin'), '/usr/local/bin'); print ':'.join(p)" $PATH)
