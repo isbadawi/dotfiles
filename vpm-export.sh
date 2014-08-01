@@ -1,4 +1,5 @@
 #!/bin/bash
+vpm install git@github.com:sjl/clam.vim
 vpm install git@github.com:ervandew/supertab
 vpm install git@github.com:p8952/vim-colors-wombat
 vpm install git@github.com:tpope/vim-commentary

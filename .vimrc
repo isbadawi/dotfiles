@@ -150,7 +150,11 @@ nnoremap <c-l> <c-w>l
 " Toggle between relative and absolute line numbers
 nnoremap <leader>n :set number! relativenumber!<cr>
 
+nnoremap ! :Clam<space>
+vnoremap ! :ClamVisual<space>
+
 nnoremap <leader>w :FixWhitespace<cr>
+
 nnoremap <leader>gb :Gblame<cr>
 nnoremap <leader>gl :Glog<cr>
 nnoremap <leader>gd :Gdiff<cr>
