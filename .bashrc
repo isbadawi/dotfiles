@@ -67,13 +67,7 @@ function git_branch {
   git rev-parse --abbrev-ref HEAD 2>/dev/null | sed -e 's/\(..*\)/ (\1)/'
 }
 
-function virtual_env {
-  if [ -n "$VIRTUAL_ENV" ]; then
-    echo " ($(basename "$VIRTUAL_ENV"))"
-  fi
-}
-
-PS1="\u@\h:\w${YELLOW}\$(virtual_env)${GREEN}\$(git_branch)${RESET}$ "
+PS1="\u@\h:\w${GREEN}\$(git_branch)${RESET}$ "
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     source $(brew --prefix)/etc/bash_completion
