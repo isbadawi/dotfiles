@@ -90,18 +90,3 @@ function _vim_ctags {
 	COMPREPLY=( $(grep -o "^$cur[^	]*" "$tagsdir/tags" ) )
 }
 complete -F _vim_ctags -f vi vim view
-
-function mkvirtualenv {
-  virtualenv "$HOME/.virtualenvs/$1"
-  if [ $# -eq 2 ]; then
-    vex "$1" pip install -r "$2"
-  fi
-}
-
-function lsvirtualenv {
-  ls "$HOME/.virtualenvs"
-}
-
-function rmvirtualenv {
-  rm -rf "$HOME/.virtualenvs/$1"
-}
