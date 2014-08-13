@@ -17,8 +17,6 @@ export NODE_PATH=/usr/local/share/npm/lib/node_modules
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
 
-export WORKON_HOME=$HOME/.virtualenvs
-
 export TERM='xterm-256color'
 # This makes `tree` use the same colors as `ls`
 eval "$(gdircolors -b)"
