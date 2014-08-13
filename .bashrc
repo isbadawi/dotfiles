@@ -70,7 +70,6 @@ PS1="\u@\h:\w${GREEN}\$(git_branch)${RESET}$ "
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     source $(brew --prefix)/etc/bash_completion
 fi
-source /usr/local/etc/bash_completion.d/password-store
 eval "$(vex --shell-config bash)"
 
 # Completion for vim -t, adapted from
