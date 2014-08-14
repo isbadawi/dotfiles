@@ -193,4 +193,4 @@ nnoremap <leader>e :call SelectaCommand("ag -l .", ":e")<cr>
 nnoremap <leader>v :call SelectaCommand("ag -l .", ":vsp")<cr>
 nnoremap <leader>s :call SelectaCommand("ag -l .", ":sp")<cr>
 " Find ctags entry and jump to it
-nnoremap <leader>f :call SelectaCommand("cut -f1 tags \| tail +7 \| uniq", ":tag")<cr>
+nnoremap <leader>f :call SelectaCommand("LC_ALL=C cut -f1 tags \| tail +7 \| uniq", ":tag")<cr>
