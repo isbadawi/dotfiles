@@ -77,6 +77,10 @@ augroup filetypes
   " Use // comments for C/C++ files (for commentary plugin)
   autocmd FileType c,cc,cpp setlocal commentstring=//\ %s
   autocmd FileType matlab setlocal commentstring=%\ %s
+  " Have gf try with these suffixes if it can't find a path
+  " (vim sets this by itself for some filetypes (e.g. py, rb, java))
+  autocmd FileType javascript setlocal suffixesadd=.js
+  autocmd FileType tex setlocal suffixesadd=.tex
 augroup END
 
 augroup remember_position
