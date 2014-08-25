@@ -6,6 +6,8 @@
   excludesfile = ~/.gitignore
 [color]
   ui = true
+[diff]
+  algorithm = patience
 [branch]
   autosetuprebase = always
 [push]
