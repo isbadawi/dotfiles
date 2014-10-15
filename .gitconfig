@@ -27,6 +27,7 @@
   startover = reset --hard HEAD
   branches = branch --verbose
   remotes = remote --verbose
+  affected-by = diff-tree --no-commit-id --name-status -r
 
   l = "!source ~/.githelpers && pretty_git_log"
   ci = commit --verbose
