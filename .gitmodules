@@ -1,0 +1,3 @@
+[submodule "vpm"]
+	path = vpm
+	url = git@github.com:isbadawi/vpm
