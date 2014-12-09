@@ -14,12 +14,20 @@ export PATH=$GOPATH/bin:$PATH
 
 export NODE_PATH=/usr/local/share/npm/lib/node_modules
 
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
+if [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ]; then
+  source /usr/local/opt/chruby/share/chruby/chruby.sh
+  source /usr/local/opt/chruby/share/chruby/auto.sh
+fi
+
+function have { command -v "$1" >/dev/null 2>&1; }
 
 export TERM='xterm-256color'
 # This makes `tree` use the same colors as `ls`
-eval "$(gdircolors -b)"
+if have gdircolors; then
+  eval "$(gdircolors -b)"
+else
+  eval "$(dircolors -b)"
+fi
 
 # Make less behave like in git
 # F: quit if less than one screen
@@ -28,9 +36,14 @@ eval "$(gdircolors -b)"
 # X: don't clear the screen on exit
 export LESS="FSRX"
 
-export EDITOR='mvim -v'
-alias vi='mvim -v'
-alias vim='mvim -v'
+if have mvim; then
+  export EDITOR='mvim -v'
+  alias vi='mvim -v'
+  alias vim='mvim -v'
+else
+  export EDITOR='vim'
+fi
+
 alias ls='ls -G'
 alias gcc='gcc-4.8'
 alias g++='g++-4.8'
@@ -67,10 +80,15 @@ function git_branch {
 
 PS1="\u@\h:\w${GREEN}\$(git_branch)${RESET}$ "
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    source $(brew --prefix)/etc/bash_completion
+if have brew; then
+  if [ -f $(brew --prefix)/etc/bash_completion ]; then
+      source $(brew --prefix)/etc/bash_completion
+  fi
 fi
-eval "$(vex --shell-config bash)"
+
+if have vex; then
+  eval "$(vex --shell-config bash)"
+fi
 
 # Completion for vim -t, adapted from
 # http://vim.wikia.com/wiki/Using_bash_completion_with_ctags_and_Vim
