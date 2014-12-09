@@ -11,6 +11,7 @@ export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 export GOPATH=$HOME/code/go
 export PATH=$GOPATH/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 export NODE_PATH=/usr/local/share/npm/lib/node_modules
 
