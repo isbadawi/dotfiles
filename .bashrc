@@ -19,11 +19,11 @@ if [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ]; then
   source /usr/local/opt/chruby/share/chruby/auto.sh
 fi
 
-function have { command -v "$1" >/dev/null 2>&1; }
+function has { command -v "$1" >/dev/null 2>&1; }
 
 export TERM='xterm-256color'
 # This makes `tree` use the same colors as `ls`
-if have gdircolors; then
+if has gdircolors; then
   eval "$(gdircolors -b)"
 else
   eval "$(dircolors -b)"
@@ -36,7 +36,7 @@ fi
 # X: don't clear the screen on exit
 export LESS="FSRX"
 
-if have mvim; then
+if has mvim; then
   export EDITOR='mvim -v'
   alias vi='mvim -v'
   alias vim='mvim -v'
@@ -80,13 +80,13 @@ function git_branch {
 
 PS1="\u@\h:\w${GREEN}\$(git_branch)${RESET}$ "
 
-if have brew; then
+if has brew; then
   if [ -f $(brew --prefix)/etc/bash_completion ]; then
       source $(brew --prefix)/etc/bash_completion
   fi
 fi
 
-if have vex; then
+if has vex; then
   eval "$(vex --shell-config bash)"
 fi
 
