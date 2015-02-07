@@ -46,8 +46,6 @@ else
 fi
 
 alias ls='ls -G'
-alias gcc='gcc-4.8'
-alias g++='g++-4.8'
 alias ag='ag --smart-case'
 
 alias t='python ~/code/py/t/t.py --task-dir ~/.tasks --list tasks'
