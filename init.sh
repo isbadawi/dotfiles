@@ -34,6 +34,7 @@ function link_dotfiles {
 
 function main {
   link_dotfiles
+  source $HOME/.bashrc
   init_vim
 }
 
