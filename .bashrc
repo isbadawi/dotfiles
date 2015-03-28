@@ -45,7 +45,11 @@ else
   export EDITOR='vim'
 fi
 
-alias ls='ls -G'
+if [ "$(uname)" == "Darwin" ]; then
+  alias ls='ls -G'
+else
+  alias ls='ls --color=auto'
+fi
 alias ag='ag --smart-case'
 
 alias t='python ~/code/py/t/t.py --task-dir ~/.tasks --list tasks'
