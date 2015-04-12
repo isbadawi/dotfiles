@@ -53,7 +53,7 @@ fi
 alias ag='ag --smart-case'
 
 alias t='python ~/code/py/t/t.py --task-dir ~/.tasks --list tasks'
-alias rainbow='yes $(jot -b# $(tput cols) | xargs | tr -d '\'' '\'') | lolcat'
+alias rainbow='jot -b# $(tput cols) | tr -d '\'\\n\'' | xargs yes | lolcat'
 
 function cd {
     builtin cd "$@" && ls
