@@ -15,11 +15,6 @@ export PATH=$HOME/.local/bin:$PATH
 
 export NODE_PATH=/usr/local/share/npm/lib/node_modules
 
-if [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ]; then
-  source /usr/local/opt/chruby/share/chruby/chruby.sh
-  source /usr/local/opt/chruby/share/chruby/auto.sh
-fi
-
 function has { command -v "$1" >/dev/null 2>&1; }
 
 export TERM='xterm-256color'
