@@ -1,10 +1,8 @@
 #!/bin/bash
-vpm install https://github.com/sjl/clam.vim
 vpm install https://github.com/ervandew/supertab
 vpm install https://github.com/p8952/vim-colors-wombat
 vpm install https://github.com/tpope/vim-commentary
 vpm install https://github.com/ap/vim-css-color
-vpm install https://github.com/tommcdo/vim-exchange
 vpm install https://github.com/tpope/vim-fugitive
 vpm install https://github.com/fatih/vim-go
 vpm install https://github.com/michaeljsmith/vim-indent-object
