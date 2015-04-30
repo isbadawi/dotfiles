@@ -105,6 +105,8 @@ cnoremap w!! w !sudo tee % > /dev/null
 
 " Swap j and gj, k and gk
 " Usually j goes down numbered lines, while gj goes down display lines
+" (n.b. Another difference is that j & k are linewise, but gj & gk are
+" characterwise...)
 noremap j gj
 noremap k gk
 noremap gj j
