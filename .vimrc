@@ -134,7 +134,7 @@ nnoremap ? :set hlsearch<cr>?
 augroup cmdwin
   autocmd!
   autocmd! CmdwinEnter * :unmap <cr>
-  autocmd! CmdwinLeave * :nnoremap <cr> :nohlsearch<cr>
+  autocmd! CmdwinLeave * :nnoremap <cr> :set nohlsearch<cr>
 augroup END
 
 " Exit insert mode with jk (and only jk)
