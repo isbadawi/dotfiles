@@ -5,6 +5,8 @@
   excludesfile = ~/.gitignore
 [color]
   ui = true
+[commit]
+  verbose = true
 [diff]
   algorithm = patience
 [branch]
@@ -30,4 +32,3 @@
   root = rev-parse --show-toplevel
 
   l = "!bash -c 'source ~/.githelpers && pretty_git_log'"
-  ci = commit --verbose
