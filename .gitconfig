@@ -22,13 +22,7 @@
   prompt = false
   keepBackup = false
 [alias]
-  aliases = config --get-regexp alias
   staged = diff --staged
   unstage = reset HEAD
-  startover = reset --hard HEAD
-  branches = branch --verbose
-  remotes = remote --verbose
-  affected-by = diff-tree --no-commit-id --name-status -r
-  root = rev-parse --show-toplevel
 
   l = "!bash -c 'source ~/.githelpers && pretty_git_log $@' --"
