@@ -5,12 +5,25 @@ syntax on
 
 set t_Co=256
 colorscheme wombat256
+" wombat defines ctermbg=234; under iTerm2 2.1.4 this mapped to #262626, but
+" under iTerm2 3.0 it maps to #1c1c1c, which is noticeably darker. I guess
+" #1c1c1c is what it was supposed to be all along, but at this point I'm too
+" used to how it looked under 2.1.4. So set ctermbg=235, which maps to #262626
+" under 3.0.
+"
+" See http://stackoverflow.com/a/33517512/281108 for context.
+" Also https://gitlab.com/gnachman/iterm2/issues/4226 is somewhat related.
+"
+" I could put a conditional on $TERM_PROGRAM / $TERM_PROGRAM_VERSION here,
+" but then I'd have to forward those variables to any ssh sessions, which is
+" not convenient.
+highlight Normal ctermfg=254 ctermbg=235 cterm=none
 " Make searches underline instead of highlight
-highlight Search ctermbg=234 ctermfg=NONE cterm=underline
-highlight IncSearch ctermbg=234 ctermfg=NONE cterm=underline
+highlight Search ctermbg=235 ctermfg=NONE cterm=underline
+highlight IncSearch ctermbg=235 ctermfg=NONE cterm=underline
 " Misc. changes to line up with wombat
-highlight LineNr ctermbg=234
-highlight NonText ctermbg=234
+highlight LineNr ctermbg=235
+highlight NonText ctermbg=235
 
 " This makes the ruby block text object plugin work
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
