@@ -3,6 +3,7 @@ filetype plugin on
 filetype plugin indent on
 syntax on
 
+set t_BE=
 set t_Co=256
 colorscheme wombat256
 " wombat defines ctermbg=234; under iTerm2 2.1.4 this mapped to #262626, but
