@@ -37,13 +37,7 @@ fi
 # X: don't clear the screen on exit
 export LESS="FSRX"
 
-if has mvim; then
-  export EDITOR='mvim -v'
-  alias vi='mvim -v'
-  alias vim='mvim -v'
-else
-  export EDITOR='vim'
-fi
+export EDITOR='vim'
 
 if [ "$(uname)" == "Darwin" ]; then
   alias ls='ls -G'
